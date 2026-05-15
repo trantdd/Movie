@@ -1,6 +1,6 @@
 ﻿namespace movie.Models
 {
-    public class nguoidung
+    public class NguoiDung
     {
     }
 }
