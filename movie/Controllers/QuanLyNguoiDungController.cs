@@ -2,11 +2,36 @@
 
 namespace movie.Controllers
 {
-    public class UserController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UserController : ControllerBase
     {
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
         {
-            return View();
+            try 
+            {
+                // Logic to retrieve all users
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (not implemented here)
+                return StatusCode(500, "An error occurred while retrieving users.");
+            }
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById(int id)
+        {
+            try
+            {
+                // Logic to retrieve a user by ID
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (not implemented here)
+                return StatusCode(500, $"An error occurred while retrieving user with ID {id}.");
+            }
     }
 }
